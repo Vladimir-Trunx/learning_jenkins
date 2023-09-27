@@ -30,5 +30,10 @@ pipeline {
                     sh "pwd"
             }
         }
+        stage('Build docker image') {
+            steps{
+                sh 'docker build -t Trunx/jenkins-images:0.1 .'
+            }
+        }
     }
 }
