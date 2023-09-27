@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Push docker image to DockerHub') {
             steps{
-                docker.withRegistry(url: 'https://index.docker.io/v1/') {
+                docker.withRegistry('https://index.docker.io/v1/') {
                     sh '''
                         docker push trunxvk1985/jenkins-images:0.2
                     '''
