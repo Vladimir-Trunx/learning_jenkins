@@ -12,7 +12,16 @@ pipeline {
             steps {
                 git branch: "main", 
                     url: "https://github.com/Vladimir-Trunx/learning_jenkins.git"
-                sh "pwd && ls -lah"
+                    }
+        }
+        stage('Test') {
+            steps{
+                dir('/home/jenkins/workspace/') {
+                    sh "ls -la "
+                    sh "pwd"
+                }
+                    sh "ls -la "
+                    sh "pwd"
             }
         }
     }
