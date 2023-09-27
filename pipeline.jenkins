@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Build docker image') {
             steps{
-                sh 'docker build -t Trunx/jenkins-images:0.1 .'
+                sh 'docker build -t trunx/jenkins-images:0.1 .'
             }
         }
     }
