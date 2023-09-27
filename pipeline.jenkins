@@ -4,8 +4,14 @@ pipeline {
     stages {
         stage('Docker version') {
             steps {
-                sh "echo $USER"
+                sh 'echo "$USER run docker on node: $(hostname)"'
                 sh 'docker version'
+            }
+        }
+        stage('Git checkout') {
+            steps {
+                git branch: "main", 
+                    url: "https://github.com/Vladimir-Trunx/learning_jenkins.git"
             }
         }
     }
