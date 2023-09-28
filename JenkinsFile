@@ -32,21 +32,21 @@ pipeline {
         }
         stage('Build docker image') {
             steps{
-                sh 'docker build -t trunxvk1985/jenkins-images:0.2 .'
+                sh 'docker build -t trunxvk1985/jenkins-images:0.3 .'
                 sh 'docker images'
             }
         }
         stage('Push docker image to DockerHub') {
             steps{
                 withDockerRegistry(credentialsId: 'docker-hub-token', url: 'https://index.docker.io/v1/') {
-                    sh 'docker push trunxvk1985/jenkins-images:0.2'
+                    sh 'docker push trunxvk1985/jenkins-images:0.3'
                 }
             }
             
         }
         stage('Delete docker image locally') {
             steps{
-                sh 'docker rmi trunxvk1985/jenkins-images:0.2'
+                sh 'docker rmi trunxvk1985/jenkins-images:0.3'
             }
         }
     }
