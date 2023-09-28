@@ -44,5 +44,10 @@ pipeline {
             }
             
         }
+        stage('Delete docker image locally') {
+            steps{
+                sh 'docker rmi trunxvk1985/jenkins-images:0.2'
+            }
+        }
     }
 }
